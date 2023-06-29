@@ -1,47 +1,49 @@
 //Le script du code permettant d'effectuer les opérations
 
-const chat = document.querySelector("#btn1")
-const chien = document.querySelector("#btn2")
-const rat = document.querySelector("#btn3")
-const reponse = document.querySelector(".selection")
-const requin = document.querySelector(".calcul")
-let valeur1 =""
-let valeur2 =""
-let signe =""
-let final =""
+let chat = document.querySelector("#btn1")
+let chien = document.querySelector("#btn2")
+let rat = document.getElementById("btn3")
+let requin = document.querySelector(".calcul")
+let Addition = document.querySelector(".addition")
+let Soustraction = document.querySelector(".soustraction")
+let Division = document.querySelector(".division")
+let Multiplication = document.querySelector(".multiplication")
+let resultat = document.getElementById('btn3')
+let valeur1 = ""
+let valeur2 = ""
+let signe = ""
+let final = ""
 
-
-if(reponse=="Addition") {
- rat ==chat+chien
-}
-
-
-chat.addEventListooener("input", (e) => {
-    valeur1 = e.target.value
+chat.addEventListener("input", (e) => {
+    valeur1 = parseInt( e.target.value )
 })
 
 chien.addEventListener("input", (e) => {
-    valeur2 = e.target.value
-    console.log(valeur2);
-
+    valeur2 = parseInt( e.target.value )
 })
 
-reponse.addEventListener("input", (e) => {
-    signe = e.target.value
-    console.log(signe)
+Addition.addEventListener("click", (e) => {
+    final = valeur1+valeur2
+    rat.value = final
 })
 
-btn3.addEventListener("input", (e) => {
-    final = e.target.value
-    console.log(final)
+Soustraction.addEventListener("click", () => {
+    final = valeur1-valeur2
+    rat.value = final
 })
 
-requin.addEventListener("submit", (e) => {
-    e.preventDefault
-    if(signe="Addition"){
-        final =valeur1+valeur2
-    }
-
+Division.addEventListener("click", () => {
+    final = valeur1/valeur2
+    rat.value = final
 })
+
+Multiplication.addEventListener("click", () => {
+    final = valeur1*valeur2
+    rat.value = final
+})
+
+
+
+
 
 

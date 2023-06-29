@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="bordure">
-      <h2>Calculatrice</h2>
+      <h2>Mini-Calculatrice</h2>
     </div>
     <br /><br />
 
@@ -21,20 +21,17 @@
       <h2>Entrez deux nombres et l'opération choisie</h2>
       <label class="ready">Nombre1 :</label>
       <input type="number" / id="btn1"><br /><br />
-      <select name="" id="" class="selection">
-        <option value="Addition">Addition</option>
-        <option value="Multiplication">Multiplication</option>
-        <option value="Soustraction">Soustraction</option>
-        <option value="Division">Division</option>
-      </select>
-      <input type="submit" class="calcul" value="calculer" />
+      <button class="addition" value="+">+</button>
+      <button class="soustraction" value="-">-</button>
+      <button class="division" value="/">/</button>
+      <button class="multiplication" value="*">*</button>
       <br /><br />
 
       <label class="ready">Nombre2 :</label>
-      <input type="number" id="btn2" /><br /><br />
+      <input type="number" id="btn2" /><br /><br /><br />
 
       <label class="ready">Résultat :</label>
-      <input type="number" id="btn3" />
+      <input type="text" name="caseResultat" id="btn3" value="0" />
     </div>
 
     <script src="colca.js"></script>
