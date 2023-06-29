@@ -1,0 +1,25 @@
+/*ce code est celui d'une calculatrice permettant d'effectuer de simple calculs*/
+
+.bordure {
+    text-align: center;
+    border-style: solid;
+    color: turquoise;
+}
+
+.consigne {
+    text-align: center;
+    background-color: rgb(191, 64, 64);
+}
+
+.flexbox {
+    border-radius: 30px;
+    background-color: skyblue;
+    border-style: solid;
+    text-align: center;
+}
+
+.ready {
+    text-decoration: underline;
+    color: rgb(62, 75, 75);
+}
+
