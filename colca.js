@@ -15,11 +15,8 @@ if(reponse=="Addition") {
  rat ==chat+chien
 }
 
-document.addEventListener("keypress", (e) => {
-    
-})
 
-chat.addEventListener("input", (e) => {
+chat.addEventListooener("input", (e) => {
     valeur1 = e.target.value
 })
 
@@ -41,8 +38,8 @@ btn3.addEventListener("input", (e) => {
 
 requin.addEventListener("submit", (e) => {
     e.preventDefault
-    if(signe==="Addition"){
-        final ===valeur1+valeur2
+    if(signe="Addition"){
+        final =valeur1+valeur2
     }
 
 })
