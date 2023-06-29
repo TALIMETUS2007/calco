@@ -42,6 +42,14 @@ Multiplication.addEventListener("click", () => {
     rat.value = final
 }) */
 
+
+
+
+
+
+
+
+
 /* 
 ##########################################################################
 code utile pour detecter le button aspect-ratio--object 
@@ -65,4 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 /* ############################################################################ */
+
+
+/* NOTE: Pour l'instant, la calculatrice n'effectue pas de calcule. a toi de voir comment le faire bon Counrage */
 
