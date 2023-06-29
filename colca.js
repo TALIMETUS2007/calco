@@ -75,5 +75,11 @@ document.addEventListener("DOMContentLoaded", function() {
 /* ############################################################################ */
 
 
-/* NOTE: Pour l'instant, la calculatrice n'effectue pas de calcule. a toi de voir comment le faire bon Counrage */
+/* NOTE:
+1) Pour l'instant, la calculatrice n'effectue pas de calcule. a toi de voir comment le faire bon Counrage
+2) pour l'instant ca affiche aussi '=' sur l'ecran, il faut reajuster cela que ca affiche tout sauf '='
+
+
+*/
+
 
