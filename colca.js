@@ -59,10 +59,25 @@ let valeur1 = []
 let valeur2 = []
 let signe = []
 let test = true
+let retest = true
 let valeur3
 let resultat = document.querySelector(".egal")
-let valeur11
-let valeur22
+let effacer = document.querySelector(".efface")
+let pii = document.querySelector(".cercle")
+let valeur11 = []
+let valeur22 = []
+let x = ecranResultat.value
+let valeurEffacer
+let nouvelleValeur =[]
+let valeur
+let pi = 3.14
+let memoire
+let pos = 0
+let n = 2
+let reste1 = []
+let reste2 = []
+
+
 
 function Addition(x,y) {
     return(parseFloat(x) + parseFloat(y) )
@@ -77,51 +92,121 @@ function Division(x,y) {
     return (parseFloat(x) / parseFloat(y) )
 }
 
+pii.addEventListener("click", () => {
+    if(test==true) {
+        valeur1.push(Math.PI)
+        valeur11 = valeur1
+    } else {
+        valeur2.push(Math.PI)
+        valeur22 = valeur2
+    }
+     });
+
 /* ici on charge le document dans le dom */
 document.addEventListener("DOMContentLoaded", function() {
   /*  on va juste recuperer tous les buttons avect SelectAll et ca va retourner cela dans un array*/
     var buttons = document.querySelectorAll("button");
-    
+
    
     let valeur 
     /* on va marcher dans le array and utilisans for. tu peux console.log(button) pour voir sont contenue
     ensuite on va ajouter le eventListener a tous les buttons et afficher le button qui a ete afficher.
     le innerHTML afficher la valuer qu'il y a ici <button> variable </button> qui est soit 1,2,etc*/ 
    for (var i = 0; i < buttons.length ; i++ ) {
-    if(i==14) {continue }
+    if(i==17) {continue}
+    if(i==4) {continue}
+    if(i==9) {continue}
+    if(i==14) {continue}
+
       buttons[i].addEventListener("click", function() {
         var value = this.innerHTML;
         affTable.push(this.innerHTML)
         valeur=affTable.join("");
         ecranResultat.value = valeur
         valeur=parseInt(valeur)
-        
        // console.log(affTable);
        
         if(value=="+"|| value=="-"|| value=="*"|| value=="/") {
-        signe = value
-        test = false
+            signe = value
+            test = false
         console.log("voici un signe");
         } else if(value==Number,test==true){
-        valeur1.push(this.innerHTML)
-        valeur11=valeur1.join("")
+            valeur1.push(this.innerHTML)
+            valeur11=valeur1.join("")
         //valeur1=parseFloat(value)     
        // ecranResultat.value=parseFloat(valeur11)
         console.log(valeur11); 
         }else if(value==Number,test==false){
             valeur2.push(this.innerHTML)
             valeur22=valeur2.join("")
-         //   valeur2=parseFloat (value)
-        // ecranResultat.value=parseFloat(valeur22)
            console.log(valeur22);
         } 
    
     })
-    
     }
+    //Voici la fonction pour pi
+ /*   buttons[19].addEventListener("click", () => {
+    if(test==true) {
+        valeur1.push(Math.PI)
+        buttons[19].innerHTML = pi
+    } else {
+        valeur2.push(Math.PI)
+        buttons[19].innerHTML = pi
+    }
+     });*/
+     //Voici la fonction pour le boutton memoire
+     buttons[9].addEventListener("click", () => {
+        memoire = ecranResultat.value
+        console.log(memoire);
+     })
 
-  });
-;
+    //Voici le fonction pour reset l'ecran d'affichage
+   buttons[14].addEventListener("click", () => {
+        test==true
+        affTable = []
+        ecranResultat.value = affTable
+      if(test==true) {
+        valeur1= []
+        valeur11 = reste1
+        console.log(valeur11);
+    }else if (test==false){
+        test = true
+        valeur1= []
+        valeur11 = reste1
+        valeur2 = []
+        valeur22 = reste2
+        signe = []
+    console.log(valeur22);
+      }  
+      
+    })
+
+})
+    //Voici la fonction pour effacer les valeurs a l'ecran d'affichage
+effacer.addEventListener("click",() => {
+    valeurEffacer=affTable.pop()
+    nouvelleValeur=affTable
+
+    ecranResultat.value = affTable.join("")
+    if(test==true) {
+        valeur1.pop()
+        //valeur1.join("")
+       // ecranResultat.value=valeur1.join("")
+        valeur11 = valeur1.join("")
+        console.log(valeur11);
+    }else if(test==false){
+        valeur2.pop()
+        //ecranResultat.value=valeur2.join("")
+        //valeur2.join("")
+        valeur22= valeur2.join("")
+        console.log(valeur22);
+        //valeur1.pop()
+        valeur11=valeur1.join("")
+
+    } 
+    
+})
+
 resultat.addEventListener("click",() => {
    if(signe=="+"){
     ecranResultat.value= Addition(valeur11,valeur22)
@@ -136,7 +221,6 @@ resultat.addEventListener("click",() => {
     ecranResultat.value= Division(valeur11,valeur22)
    }
 })
-
 
 /*------------------------affichage-------------------------------*/
 /*

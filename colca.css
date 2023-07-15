@@ -96,3 +96,7 @@ body {
 	margin-bottom: 30px;
 	text-align: center;
 }
+
+.display :placeholder-shown{
+	color: white;
+}
