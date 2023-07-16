@@ -64,6 +64,7 @@ let valeur3
 let resultat = document.querySelector(".egal")
 let effacer = document.querySelector(".efface")
 let pii = document.querySelector(".cercle")
+let memory = document.querySelector(".rappelMemoire")
 let valeur11 = []
 let valeur22 = []
 let x = ecranResultat.value
@@ -76,6 +77,7 @@ let pos = 0
 let n = 2
 let reste1 = []
 let reste2 = []
+let timeout 
 
 
 
@@ -92,15 +94,24 @@ function Division(x,y) {
     return (parseFloat(x) / parseFloat(y) )
 }
 
+//voici la fonction pour pi
+
 pii.addEventListener("click", () => {
     if(test==true) {
         valeur1.push(Math.PI)
-        valeur11 = valeur1
     } else {
         valeur2.push(Math.PI)
-        valeur22 = valeur2
     }
      });
+
+memory.addEventListener("click", () => {
+    console.log(memoire);
+    if(test==true) {
+        valeur1.push(memoire)
+    } else {
+        valeur2.push(memoire)
+    }
+})
 
 /* ici on charge le document dans le dom */
 document.addEventListener("DOMContentLoaded", function() {
@@ -113,10 +124,14 @@ document.addEventListener("DOMContentLoaded", function() {
     ensuite on va ajouter le eventListener a tous les buttons et afficher le button qui a ete afficher.
     le innerHTML afficher la valuer qu'il y a ici <button> variable </button> qui est soit 1,2,etc*/ 
    for (var i = 0; i < buttons.length ; i++ ) {
-    if(i==17) {continue}
     if(i==4) {continue}
-    if(i==9) {continue}
-    if(i==14) {continue}
+    if(i==5) {continue}
+    if(i==10) {continue}
+    if(i==11) {continue}
+    if(i==16) {continue}
+    if(i==17) {continue}
+    if(i==20) {continue}
+    if(i==23) {continue}
 
       buttons[i].addEventListener("click", function() {
         var value = this.innerHTML;
@@ -144,24 +159,49 @@ document.addEventListener("DOMContentLoaded", function() {
    
     })
     }
-    //Voici la fonction pour pi
- /*   buttons[19].addEventListener("click", () => {
-    if(test==true) {
-        valeur1.push(Math.PI)
-        buttons[19].innerHTML = pi
-    } else {
-        valeur2.push(Math.PI)
-        buttons[19].innerHTML = pi
-    }
-     });*/
+    //Voici la fonction pour Tan
+    buttons[5].addEventListener("click", () => {
+        ecranResultat.value = Math.tan(ecranResultat.value)
+    })
+
+    //Voici la fonction pour Rappel Memoire
+
+    buttons[11].addEventListener("click", () => {
+        console.log(memoire);
+        if(test==true) {
+            valeur1.push(memoire)
+            valeur11 = valeur1
+        } else {
+            valeur2.push(memoire)
+            valeur22 = valeur2
+        }
+    })
+    
      //Voici la fonction pour le boutton memoire
-     buttons[9].addEventListener("click", () => {
+     buttons[10].addEventListener("click", () => {
         memoire = ecranResultat.value
         console.log(memoire);
+        timeout=setTimeout(() => {
+            alert("Vous venez de mettre " + memoire+ " en memoire ")
+        },500)
+        clearTimeout(timeout)
+     })
+
+     //Voici la fonction pour Cos
+
+     buttons[17].addEventListener("click", () => {
+        ecranResultat.value = Math.cos(ecranResultat.value)
+     })
+
+     //Voici la fonction pour Sin
+
+     buttons[23].addEventListener("click", () => {
+        ecranResultat.value = Math.sin(ecranResultat.value)
+        console.log();
      })
 
     //Voici le fonction pour reset l'ecran d'affichage
-   buttons[14].addEventListener("click", () => {
+   buttons[16].addEventListener("click", () => {
         test==true
         affTable = []
         ecranResultat.value = affTable
